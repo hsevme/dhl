@@ -32,5 +32,11 @@ pipeline {
         failure {
             echo 'FAILED! Should send a mail...'
         }
+        always {
+                    allure includeProperties:
+                     false,
+                     jdk: '',
+                     results: [[path: 'build/allure-results']]
+                }
     }
 }
